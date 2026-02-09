@@ -1,0 +1,60 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme",
+    "language": "Language"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "pages": {
+    "home": {
+      "title": "Hi, I'm",
+      "title2": "Vincent André",
+      "role": "Full-stack developer",
+      "description": "I create modern, high-performance web applications,",
+      "description2": "combining backend and frontend for seamless user experiences."
+    },
+    "about": {
+      "title": "About",
+      "skills": "Skills",
+      "description": "Full-stack developer with a particular affinity for back-end development..",
+      "description2": "I design robust and scalable technical solutions, combining back-end expertise (Node.js, databases) with mastery of modern front-end frameworks.",
+      "description3": "My approach focuses on performance, maintainability, and user experience, with an ability to adapt quickly to business needs.",
+      "description4": "I am looking for ambitious technical challenges to put my skills to work on innovative projects.",
+      "agile": "Agile Methodologies"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Explore my work and projects",
+      "technical stack": "Technical stack",
+      "viewMore": "View more"
+    }
+  },
+  "form": {
+    "networkError": "Network error. Please try again.",
+    "emailRegex": "Email is required",
+    "emailRegex2": "Invalid email",
+    "objectLabel": "Subject",
+    "objectRegex": "Subject is required",
+    "objectRegex2": "Unallowed characters (no HTML tags or other symbols).",
+    "objectRegex3": "Subject must not exceed 100 characters.",
+    "messageRegex": "Message is required",
+    "messageRegex2": "Unallowed characters (no HTML tags or other symbols).",
+    "messageRegex3": "The message must not exceed 1000 characters.",
+    "invalidRequest": "Invalid request",
+    "requiredFields": "All fields are required.",
+    "successMessage": "Message sent successfully !",
+    "errorMessage": "Error sending message",
+    "rgpdLabel": "By checking this box, I agree to my data being processed.",
+    "rgpdError": "You must agree to the processing of your data in order to submit the form.",
+    "sending": "Sending...",
+    "send": "Send"
+  }
+}

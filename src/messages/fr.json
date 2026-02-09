@@ -1,0 +1,61 @@
+{
+  "common": {
+    "welcome": "Bienvenue",
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "toggleTheme": "Changer le thème",
+    "language": "Langue"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "pages": {
+    "home": {
+      "title": "Hey, je suis",
+      "title2": "Vincent André",
+      "role": "Développeur full-stack",
+      "description": "Je crée des applications web modernes et performantes,",
+      "description2": "en combinant backend et frontend pour des expériences utilisateur fluides."
+    },
+    "about": {
+      "title": "À propos",
+      "skills": "Compétences",
+      "description": "Développeur full-stack avec une appétence particulière pour le back-end.",
+      "description2": "Je conçois des solutions techniques robustes et évolutives, en alliant une expertise back-end (Node.js, bases de données) à une maîtrise des frameworks front-end modernes.",
+      "description3": "Mon approche se concentre sur la performance, la maintenabilité et l'expérience utilisateur, avec une capacité à m'adapter rapidement aux besoins métiers.",
+      "description4": "Je recherche des défis techniques ambitieux pour mettre mes compétences au service de projets innovants.",
+      "agile": "Méthodologies Agile"
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Explorez mes réalisations et projets",
+      "technical stack": "Stack technique",
+      "viewMore": "Voir plus"
+    }
+  },
+  "form": {
+      "networkError": "Erreur réseau. Veuillez réessayer.",
+      "emailRegex": "L'email est requis",
+      "emailRegex2": "Email invalide",
+      "objectLabel": "Objet",
+      "objectRegex": "L'objet est requis",
+      "objectRegex2": "Caractères non autorisés (pas de balises HTML ou autre symbole).",
+      "objectRegex3": "L'objet ne doit pas dépasser 100 caractères.",
+      "messageRegex": "Le message est requis",
+      "messageRegex2": "Caractères non autorisés (pas de balises HTML ou autre symbole).",
+      "messageRegex3": "Le message ne doit pas dépasser 1000 caractères.",
+      "invalidRequest": "Requête invalide",
+      "requiredFields": "Tous les champs sont requis.",
+      "successMessage": "Message envoyé avec succès !",
+      "errorMessage": "Erreur lors de l'envoi du message",
+      "rgpdLabel": "En cochant cette case, j'accepte que mes données soient traitées.",
+      "rgpdError": "Vous devez accepter le traitement de vos données pour envoyer le formulaire.",
+      "sending": "Envoi en cours...",
+      "send": "Envoyer"
+  }
+}
+
