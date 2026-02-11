@@ -36,7 +36,7 @@
     {
         "id": 2,
         "title": "Application mobile de partage de voyages",
-        "description": "Application mobile pour organiser et partager des voyages, avec plus de 10k téléchargements. Refonte complète en Ionic/React pour une compatibilité avec l'Apple Store.",
+        "description": "App mobile pour organiser et partager des voyages, avec plus de 10k téléchargements. Refonte complète en Ionic/React pour une compatibilité avec l'Apple Store.",
         "technologies": [
             "Ionic",
             "React",

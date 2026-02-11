@@ -67,6 +67,18 @@ export function ContactForm() {
         }
     };
 
+    useEffect(() => {
+        if (isOpen) {
+            console.log(document)
+            document.children[0].style.overflow = "hidden"
+        } else {
+            document.children[0].style.overflow = "unset"
+        }
+        return () => {
+            document.children[0].style.overflow = "unset"
+        }
+    }, [isOpen])
+
     return (
         <>
             <motion.div
@@ -81,181 +93,191 @@ export function ContactForm() {
                 className="fixed left-3 bottom-[5%] md:bottom-1/2 md:transform md:-translate-y-1/2"
             >
                 <Link target="_blank" href="https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/">
-                    <div className="size-14 glass-card rounded-full mb-2 flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:fill-current hover:text-violet-800">
+                    <div className="size-14 glass-cardHome rounded-full mb-2 flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:fill-current hover:text-violet-800">
                         <Linkedin />
                     </div>
                 </Link>
-                <div onClick={() => setIsOpen(true)} className="size-14 glass-card rounded-full mb-2 flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:fill-current hover:text-violet-800">
+                <div onClick={() => setIsOpen(true)} className="size-14 glass-cardHome rounded-full mb-2 flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:fill-current hover:text-violet-800">
                     <MessageCircle />
                 </div>
-            
-        </motion.div >
-            {/* Modale animée */ }
+
+            </motion.div >
+            {/* Modale animée */}
             < AnimatePresence >
-            { isOpen && (
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={modalVariants}
-                    className="fixed inset-0 z-50 flex items-end justify-center"
-                    onMouseDown={handleClickOutside}
-                >
-                    <motion.div
-                        ref={modalRef}
-                        className="w-full max-w-2xl glass-card3 p-6 border-t"
-                        onMouseMove={handleDragMove}
-                        onMouseUp={handleDragEnd}
-                        onMouseLeave={handleDragEnd}
-                        onTouchStart={(e) => handleDragStart(e)}
-                        onTouchMove={(e) => handleDragMove(e)}
-                        onTouchEnd={handleDragEnd}
-                    >
-                        {/* Barre de drag (fonctionnelle) */}
-                        <div
-                            ref={dragHandleRef}
-                            className="w-12 h-1.5 bg-gray-500 rounded-full mx-auto mb-4 cursor-grab active:cursor-grabbing touch-none"
-                            onMouseDown={handleDragStart}
-                            onTouchStart={(e) => {
-                                e.preventDefault(); // Empêche le comportement par défaut
-                                handleDragStart(e);
-                            }}
+                {isOpen && (
+                    <>
+                        {/* Fond flou/noir avec animation d'opacité */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }} // Durée de l'animation du fond
+                            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+                            onClick={handleClickOutside}
                         />
-
-                        {/* Formulaire */}
-                        <form
-                            onSubmit={handleSubmit(async (data) => {
-                                if (honeypot) return;
-                                setIsSubmitting(true);
-                                try {
-                                    const response = await fetch("/api/contact", {
-                                        method: "POST",
-                                        headers: { "Content-Type": "application/json" },
-                                        body: JSON.stringify(data),
-                                    });
-
-                                    const result = await response.json();
-                                    if (response.ok) {
-                                        setSubmitStatus({ success: true, message: result.message });
-                                        toast.success(tForm('successMessage')); // Utilise la traduction
-                                        reset();
-                                        setTimeout(() => setIsOpen(false), 1500);
-                                    } else {
-                                        setSubmitStatus({ success: false, message: result.message });
-                                        toast.error(tForm('errorMessage')); // Utilise la traduction
-                                    }
-                                } catch (error) {
-                                    setSubmitStatus({ success: false, message: tForm('networkError') });
-                                    toast.error(tForm('networkError'));
-                                } finally {
-                                    setIsSubmitting(false);
-                                }
-                            })}
-                            className="space-y-4"
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={modalVariants}
+                            className="fixed inset-0 z-50 flex items-end justify-center"
+                            onMouseDown={handleClickOutside}
                         >
-                            {/* Honeypot (invisible) */}
-                            <input
-                                type="text"
-                                name="honeypot"
-                                value={honeypot}
-                                onChange={(e) => setHoneypot(e.target.value)}
-                                className="hidden"
-                            />
-
-                            {/* Champ Email */}
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-white">Email</label>
-                                <input
-                                    type="email"
-                                    {...register("email", {
-                                        required: tForm('emailRegex'),
-                                        pattern: {
-                                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                            message: tForm('emailRegex2'),
-                                        },
-                                    })}
-                                    className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
-                                />
-                                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-                            </div>
-
-                            {/* Champ Objet */}
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-white">{tForm('objectLabel')}</label>
-                                <input
-                                    type="text"
-                                    {...register("subject", {
-                                        required: tForm('objectRegex'),
-                                        pattern: {
-                                            value: /^[a-zA-Z0-9\s\-_,.!?'"/\\|@#()àâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜ;:–—]+$/,
-                                            message: tForm('objectRegex2'),
-                                        },
-                                        maxLength: {
-                                            value: 100,
-                                            message: tForm('objectRegex3'),
-                                        },
-                                    })}
-                                    className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
-                                />
-                                {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-white">Message</label>
-                                <textarea
-                                    rows="4"
-                                    {...register("message", {
-                                        required: tForm('messageRegex'),
-                                        pattern: {
-                                            value: /^[a-zA-Z0-9\s\-_,.!?'"/\\|@#()àâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜ;\n–—:]+$/,
-                                            message: tForm('messageRegex2'),
-                                        },
-                                        maxLength: {
-                                            value: 1000,
-                                            message: tForm('messageRegex3'),
-                                        },
-                                    })}
-                                    className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
-                                />
-                                {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
-                            </div>
-
-                            <div className="flex items-center mb-4">
-                                <input
-                                    type="checkbox"
-                                    id="rgpd-consent"
-                                    {...register("rgpdConsent", {
-                                        required: tForm('rgpdError'),
-                                    })}
-                                    className="mr-2 h-4 w-4 rounded border-gray-300 text-violet-600 accent-violet-500"
-                                />
-                                <label htmlFor="rgpd-consent" className="text-sm font-medium text-white">
-                                    {tForm('rgpdLabel')}
-                                </label>
-
-                            </div>
-                            {errors.rgpdConsent && <p className="text-red-500 text-xs mt-1">{errors.rgpdConsent.message}</p>}
-
-                            {/* Bouton Envoyer */}
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-violet-600 hover:bg-violet-700 text-white py-2 px-4 rounded transition-colors"
+                            <motion.div
+                                ref={modalRef}
+                                className="w-full max-w-2xl glass-card3 p-6 border-t"
+                                onMouseMove={handleDragMove}
+                                onMouseUp={handleDragEnd}
+                                onMouseLeave={handleDragEnd}
+                                onTouchStart={(e) => handleDragStart(e)}
+                                onTouchMove={(e) => handleDragMove(e)}
+                                onTouchEnd={handleDragEnd}
                             >
-                                {isSubmitting ? tForm('sending') : tForm('send')}
-                            </button>
+                                {/* Barre de drag (fonctionnelle) */}
+                                <div
+                                    ref={dragHandleRef}
+                                    className="w-12 h-1.5 bg-gray-500 rounded-full mx-auto mb-4 cursor-grab active:cursor-grabbing touch-none"
+                                    onMouseDown={handleDragStart}
+                                    onTouchStart={(e) => {
+                                        e.preventDefault(); // Empêche le comportement par défaut
+                                        handleDragStart(e);
+                                    }}
+                                />
 
-                            {/* Message de statut */}
-                            {submitStatus.message && (
-                                <p className={`mt-2 text-center text-sm ${submitStatus.success ? "text-green-500" : "text-red-500"}`}>
-                                    {submitStatus.message}
-                                </p>
-                            )}
-                        </form>
-                    </motion.div>
-                </motion.div>
-            )
-}
+                                {/* Formulaire */}
+                                <form
+                                    onSubmit={handleSubmit(async (data) => {
+                                        if (honeypot) return;
+                                        setIsSubmitting(true);
+                                        try {
+                                            const response = await fetch("/api/contact", {
+                                                method: "POST",
+                                                headers: { "Content-Type": "application/json" },
+                                                body: JSON.stringify(data),
+                                            });
+
+                                            const result = await response.json();
+                                            if (response.ok) {
+                                                setSubmitStatus({ success: true, message: result.message });
+                                                toast.success(tForm('successMessage')); // Utilise la traduction
+                                                reset();
+                                                setTimeout(() => setIsOpen(false), 1500);
+                                            } else {
+                                                setSubmitStatus({ success: false, message: result.message });
+                                                toast.error(tForm('errorMessage')); // Utilise la traduction
+                                            }
+                                        } catch (error) {
+                                            setSubmitStatus({ success: false, message: tForm('networkError') });
+                                            toast.error(tForm('networkError'));
+                                        } finally {
+                                            setIsSubmitting(false);
+                                        }
+                                    })}
+                                    className="space-y-4"
+                                >
+                                    {/* Honeypot (invisible) */}
+                                    <input
+                                        type="text"
+                                        name="honeypot"
+                                        value={honeypot}
+                                        onChange={(e) => setHoneypot(e.target.value)}
+                                        className="hidden"
+                                    />
+
+                                    {/* Champ Email */}
+                                    <div>
+                                        <label className="block text-sm font-medium mb-1">Email</label>
+                                        <input
+                                            type="email"
+                                            {...register("email", {
+                                                required: tForm('emailRegex'),
+                                                pattern: {
+                                                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                                    message: tForm('emailRegex2'),
+                                                },
+                                            })}
+                                            className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
+                                        />
+                                        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                                    </div>
+
+                                    {/* Champ Objet */}
+                                    <div>
+                                        <label className="block text-sm font-medium mb-1 ">{tForm('objectLabel')}</label>
+                                        <input
+                                            type="text"
+                                            {...register("subject", {
+                                                required: tForm('objectRegex'),
+                                                pattern: {
+                                                    value: /^[a-zA-Z0-9\s\-_,.!?'"/\\|@#()àâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜ;:–—]+$/,
+                                                    message: tForm('objectRegex2'),
+                                                },
+                                                maxLength: {
+                                                    value: 100,
+                                                    message: tForm('objectRegex3'),
+                                                },
+                                            })}
+                                            className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
+                                        />
+                                        {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-medium mb-1 ">Message</label>
+                                        <textarea
+                                            rows="4"
+                                            {...register("message", {
+                                                required: tForm('messageRegex'),
+                                                pattern: {
+                                                    value: /^[a-zA-Z0-9\s\-_,.!?'"/\\|@#()àâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜ;\n–—:]+$/,
+                                                    message: tForm('messageRegex2'),
+                                                },
+                                                maxLength: {
+                                                    value: 1000,
+                                                    message: tForm('messageRegex3'),
+                                                },
+                                            })}
+                                            className="w-full p-2 rounded border border-gray-700 focus:ring-2 focus:ring-violet-500"
+                                        />
+                                        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+                                    </div>
+
+                                    <div className="flex items-center mb-4">
+                                        <input
+                                            type="checkbox"
+                                            id="rgpd-consent"
+                                            {...register("rgpdConsent", {
+                                                required: tForm('rgpdError'),
+                                            })}
+                                            className="mr-2 h-4 w-4 rounded border-gray-300 text-violet-600 accent-violet-500"
+                                        />
+                                        <label htmlFor="rgpd-consent" className="text-sm font-medium ">
+                                            {tForm('rgpdLabel')}
+                                        </label>
+
+                                    </div>
+                                    {errors.rgpdConsent && <p className="text-red-500 text-xs mt-1">{errors.rgpdConsent.message}</p>}
+
+                                    {/* Bouton Envoyer */}
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-violet-600 hover:bg-violet-700 text-white py-2 px-4 rounded transition-colors"
+                                    >
+                                        {isSubmitting ? tForm('sending') : tForm('send')}
+                                    </button>
+
+                                    {/* Message de statut */}
+                                    {submitStatus.message && (
+                                        <p className={`mt-2 text-center text-sm ${submitStatus.success ? "text-green-500" : "text-red-500"}`}>
+                                            {submitStatus.message}
+                                        </p>
+                                    )}
+                                </form>
+                            </motion.div>
+                        </motion.div>
+                    </>)
+                }
             </AnimatePresence >
         </>
     );

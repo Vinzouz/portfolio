@@ -8,7 +8,7 @@ export default async function PresentationDiv() {
     return (
         <section className="flex items-center justify-center mt-40">
             <motion.div
-                className="glass-card max-w-3xl text-center px-8 py-10"
+                className="glass-cardHome max-w-3xl text-center px-8 py-10"
                 initial={{ x: -100, opacity: 0 }} // Position initiale : 100px à gauche et invisible
                 animate={{ x: 0, opacity: 1 }} // Animation : revient à sa position et devient visible
                 transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }} // Effet "spring" pour un mouvement naturel

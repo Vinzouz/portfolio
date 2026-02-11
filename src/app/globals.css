@@ -40,8 +40,19 @@
     /* Ombre légère */
   }
 
-  .glass-card {
+  .glass-cardHome {
     background: rgba(137, 92, 246, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 4px 8px rgba(99, 101, 241, 0.15),
+      0 10px 20px rgba(137, 92, 246, 0.1);
+  }
+
+  .glass-cardProjectModal {
+    background: var(--backgroundModal);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -63,7 +74,7 @@
   }
 
   .glass-card3 {
-    background: #1B1A1A;
+    background: var(--backgroundModal);
     /* backdrop-filter: blur(10px); */
     border-radius: 20px 20px 0 0;
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -88,8 +99,9 @@
   :root {
     --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 
-    --background: 210 5% 91%;
+    --background: 210 25% 89%;
     --backgroundHex: #EEEEEE;
+    --backgroundModal: rgba(220, 227, 234, 0.9);
     --foreground: 222.2 84% 4.9%;
 
     --primary: 222.2 47.4% 11.2%;
@@ -119,6 +131,7 @@
     /* Base */
     --background: 0 5% 8%;
     --backgroundHex: #1B1A1A;
+    --backgroundModal: rgba(27, 26, 26, 0.9);
     --foreground: 210 20% 96%;
 
     /* Primary (texte fort / actions principales) */

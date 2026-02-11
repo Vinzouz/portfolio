@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { ProjectModal } from "./ProjectModal"
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card"
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay, Pagination } from "swiper/modules"
 
 const cardVariants = {
   hidden: (index) => ({
@@ -53,14 +55,35 @@ export function ProjectCard({ project, index }) {
   return (
     <>
       <CardContainer containerClassName="py-0">
-        <CardBody className="glass-card2 p-6 rounded-lg shadow-lg relative" >
-          <CardItem translateZ={80} className={`relative h-48 w-full overflow-hidden rounded-t-lg ${index === 1 ?  "mb-4" : "mb-2"}`}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-contain"
-            />
+        <CardBody className="glass-card2 p-6 rounded-lg shadow-lg relative w-[350px]" >
+          <CardItem translateZ={80} className="relative h-40 w-full overflow-hidden rounded-t-lg mb-4">
+            <Swiper
+              modules={[Pagination]}
+              navigation
+              pagination={{ clickable: true }}
+              spaceBetween={0}
+              slidesPerView={1}
+              loop={true}
+              className="w-full h-40"
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+              }}
+              onClick={() => setIsModalOpen(true)}
+            >
+              {project.modalImages?.map((img, index) => (
+                <SwiperSlide key={index} className="w-full h-64">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={img}
+                      alt={`${project.title} - Screenshot ${index + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </CardItem>
 
           <div className="space-y-4">
@@ -80,7 +103,7 @@ export function ProjectCard({ project, index }) {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs font-medium rounded-full text-white shadow-sm hover:scale-105"
+                      className="px-3 py-1 text-xs font-medium rounded-full text-white shadow-sm hover:scale-105 transition-all"
                       style={{
                         background: "linear-gradient(to right, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8))",
                       }}
@@ -101,11 +124,7 @@ export function ProjectCard({ project, index }) {
             <CardItem translateZ={60} className="w-full mt-4">
               <Button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full mx-auto block py-2 text-sm font-medium rounded-lg text-white"
-                style={{
-                  background: "linear-gradient(to right, #6366f1, #8b5cf6)",
-                  border: "none"
-                }}
+                className="w-full mx-auto block py-2 text-sm font-medium rounded-lg text-white bg-gradient-to-r from-indigo-500 to-violet-500 hover:brightness-125 transition-all"
               >
                 {t("viewMore")}
               </Button>
