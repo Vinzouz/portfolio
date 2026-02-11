@@ -33,7 +33,7 @@ export const AnimatedProjectCard = ({ project, index }) => (
     variants={cardVariants}
     custom={index}
   >
-    <ProjectCard project={project} />
+    <ProjectCard project={project} index={index} />
   </motion.div>
 );
 
@@ -54,7 +54,7 @@ export function ProjectCard({ project, index }) {
     <>
       <CardContainer containerClassName="py-0">
         <CardBody className="glass-card2 p-6 rounded-lg shadow-lg relative" >
-          <CardItem translateZ={80} className="relative h-48 w-full overflow-hidden rounded-t-lg mb-4">
+          <CardItem translateZ={80} className={`relative h-48 w-full overflow-hidden rounded-t-lg ${index === 1 ?  "mb-4" : "mb-2"}`}>
             <Image
               src={project.image}
               alt={project.title}
@@ -65,7 +65,7 @@ export function ProjectCard({ project, index }) {
 
           <div className="space-y-4">
             <CardItem translateZ={60}>
-              <h3 className="text-2xl font-bold text-foreground min-h-[64px] content-center">
+              <h3 className="text-2xl font-bold text-foreground ">
                 {project.title}
               </h3>
             </CardItem>

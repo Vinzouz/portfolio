@@ -29,24 +29,37 @@
       0 0 20px hsl(var(--primary) / 0.4);
   }
 
+  .navbar {
+    background: rgba(137, 92, 246, 0.08);
+    /* Fond blanc semi-transparent */
+    backdrop-filter: blur(10px);
+    /* Effet flou pour un style moderne */
+    border-bottom: 1px solid rgba(137, 92, 246, 0.15);
+    /* Bordure subtile violette */
+    box-shadow: 0 0.5px 4px rgba(137, 92, 246, 0.08);
+    /* Ombre légère */
+  }
+
   .glass-card {
-    background: rgba(88, 88, 88, 0.10);
+    background: rgba(137, 92, 246, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.09);
-    box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126),
-      0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
-      0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 4px 8px rgba(99, 101, 241, 0.15),
+      0 10px 20px rgba(137, 92, 246, 0.1);
   }
 
   .glass-card2 {
-    background: rgba(88, 88, 88, 0.10);
+    background: rgba(138, 92, 246, 0.137);
     /* backdrop-filter: blur(10px); */
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.09);
-    box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126),
-      0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
-      0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 4px 8px rgba(99, 101, 241, 0.15),
+      0 10px 20px rgba(137, 92, 246, 0.1);
   }
 
   .glass-card3 {
@@ -60,8 +73,9 @@
   }
 
   .backgroundModal {
-    background: rgba(27, 26, 26, 0.9); /* Fond légèrement plus clair */
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: rgba(27, 26, 26, 0.9);
+    /* Fond légèrement plus clair */
+    border: 1px solid rgba(255, 255, 255, 0.09);
   }
 
   .project-title {
@@ -74,7 +88,7 @@
   :root {
     --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 
-    --background: 0 0% 100%;
+    --background: 210 5% 91%;
     --backgroundHex: #EEEEEE;
     --foreground: 222.2 84% 4.9%;
 
@@ -98,6 +112,7 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --swiper-pagination-bullet-size: 12px;
   }
 
   .dark {
@@ -131,5 +146,6 @@
     --input: 0 6% 18%;
     --ring: 210 20% 75%;
 
+    --swiper-pagination-bullet-size: 12px;
   }
 }

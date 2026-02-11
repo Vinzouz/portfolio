@@ -1,6 +1,5 @@
 "use client"
 
-
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
@@ -21,6 +20,7 @@ export function Navigation() {
     ]
 
     const [isOpen, setIsOpen] = useState(false);
+    const [activeHash, setActiveHash] = useState('');
 
     return (
         <motion.div
@@ -62,9 +62,9 @@ export function Navigation() {
 
                 {/* Contenu de la navbar - centré sur desktop */}
                 <div className="flex-1 flex items-center justify-center sm:justify-center">
-                    <div className="hidden sm:flex items-center gap-2 border border-border rounded-full bg-background/80 backdrop-blur-sm font-sans neon-soft">
+                    <div className="hidden sm:flex items-center gap-2 border border-border rounded-full font-sans neon-soft navbar">
                         {navItems.map((item) => {
-                            const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`);
+                            const isActive = item.href === "/#about" && activeHash ? activeHash : pathname === item.href && !activeHash || pathname?.startsWith(`${item.href}/`);
                             return (
                                 <Link
                                     key={item.href}
@@ -74,6 +74,7 @@ export function Navigation() {
                                         "hover:bg-accent hover:text-accent-foreground",
                                         isActive && "bg-accent text-accent-foreground"
                                     )}
+                                    onClick={(e) => setActiveHash(e.target.hash ? true : false)}
                                 >
                                     {item.label}
                                 </Link>
