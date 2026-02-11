@@ -55,14 +55,14 @@
                     "Création facile de voyages étape par étape, avec carnets partageables par email ou réseaux sociaux.",
                     "Possibilité de liker et commenter les étapes, ainsi que de créer des carnets collaboratifs.",
                     "Affichage automatique des photos en mosaïque, avec légendes personnalisables.",
-                    "Fonctionnement hors ligne grâce au stockage local avec SQLite."
+                    "Fonctionnement hors ligne grâce au stockage local avec SQLite.",
+                    "Système de notifications pour les likes et commentaires."
                 ]
             },
             {
                 "section": "Chiffres clés",
                 "content": [
-                    "Plus de 10 000 téléchargements.",
-                    "Système de notifications pour les likes et commentaires."
+                    "Plus de 10 000 téléchargements."
                 ]
             }
         ]
