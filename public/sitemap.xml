@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Generated: 2026-02-12 -->
+
+  <url>
+    <loc>https://vincentandre.pro/</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vincentandre.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vincentandre.pro/en/" />
+  </url>
+
+  <url>
+    <loc>https://vincentandre.pro/fr/</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vincentandre.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vincentandre.pro/en/" />
+  </url>
+
+  <url>
+    <loc>https://vincentandre.pro/fr/projects</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vincentandre.pro/fr/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vincentandre.pro/en/projects" />
+  </url>
+
+  <url>
+    <loc>https://vincentandre.pro/en/</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://vincentandre.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vincentandre.pro/en/" />
+  </url>
+
+  <url>
+    <loc>https://vincentandre.pro/en/projects</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

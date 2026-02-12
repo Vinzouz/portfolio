@@ -8,7 +8,7 @@ import { ProjectModal } from "./ProjectModal"
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card"
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Pagination } from "swiper/modules"
+import { Pagination } from "swiper/modules"
 
 const cardVariants = {
   hidden: (index) => ({

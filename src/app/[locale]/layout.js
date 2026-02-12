@@ -8,6 +8,7 @@ import { GridPatternLinearGradient } from '@/components/GridPatternBackground';
 import { ContactForm } from '@/components/contactForm';
 import { Toaster } from 'react-hot-toast';
 import CookieBanner from '@/components/CookieBanner';
+import { metadataByLocale } from '@/lib/metadata';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,6 +18,9 @@ const montserrat = Montserrat({
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   const messages = await getMessages();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vincentandre.pro';
+  const localeBase = `${siteUrl}/${locale}`;
+  const homeMeta = metadataByLocale[locale]?.home || metadataByLocale['en'].home;
 
   return (
     <html lang={locale} className='scroll-smooth overflow-x-hidden'>
@@ -24,6 +28,26 @@ export default async function LocaleLayout({ children, params }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Canonical and hreflang for SEO */}
+        <link rel="canonical" href={localeBase} />
+        <link rel="alternate" hrefLang="fr" href={`${siteUrl}/fr/`} />
+        <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/`} />
+
+        {/* JSON-LD Person / Website structured data (minimal) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Vincent André",
+            "url": siteUrl,
+            "jobTitle": "Full-Stack Developer",
+            "description": homeMeta?.description || "Full-Stack developer",
+            "sameAs": [
+              "https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/"
+            ]
+          }) }}
+        />
       </head>
       <body className={`${montserrat.variable}`}>
         <div className="w-full">

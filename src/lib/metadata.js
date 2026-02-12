@@ -3,7 +3,7 @@ export const metadataByLocale = {
   fr: {
     home: {
       title: "Vincent André - Portfolio",
-      description: "Portfolio de Vincent André, développeur full-stack...",
+      description: "Portfolio de Vincent André, développeur full-stack",
       openGraph: {
         title: "Vincent André - Portfolio",
         description: "Découvrez mes projets et compétences en développement web full-stack.",
@@ -25,7 +25,7 @@ export const metadataByLocale = {
     },
     projects: {
       title: "Vincent André - Projets",
-      description: "Mes projets récents...",
+      description: "Mes projets récents",
       openGraph: {
         title: "Vincent André - Projets",
         description: "Explorez mes projets récents en développement full-stack.",
@@ -49,7 +49,7 @@ export const metadataByLocale = {
   en: {
     home: {
       title: "Vincent André - Portfolio",
-      description: "Vincent André's portfolio...",
+      description: "Vincent André's portfolio",
       openGraph: {
         title: "Vincent André - Portfolio",
         description: "Discover my projects and full-stack development skills.",
@@ -71,7 +71,7 @@ export const metadataByLocale = {
     },
     projects: {
       title: "Vincent André - Projects",
-      description: "My recent projects...",
+      description: "My recent projects",
       openGraph: {
         title: "Vincent André - Projects",
         description: "Browse my recent full-stack development projects.",

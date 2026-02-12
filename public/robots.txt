@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap (replace with your live domain)
+Sitemap: https://vincentandre.pro/sitemap.xml
+
+# Optional crawl delay
+Crawl-delay: 10

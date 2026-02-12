@@ -4,11 +4,11 @@ import { useEffect } from "react"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Layers } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Layers } from "lucide-react";
 
 export function ProjectModal({ isOpen, onClose, project }) {
   const t = useTranslations("pages.projects")
