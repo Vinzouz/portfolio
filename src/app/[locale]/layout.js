@@ -7,6 +7,7 @@ import { Montserrat } from "next/font/google"
 import { GridPatternLinearGradient } from '@/components/GridPatternBackground';
 import { ContactForm } from '@/components/contactForm';
 import { Toaster } from 'react-hot-toast';
+import CookieBanner from '@/components/CookieBanner';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default async function LocaleLayout({ children, params }) {
                 <Navigation />
                 {children}
               </div>
-
+              <CookieBanner />
               <Toaster />
               <ContactForm />
             </ThemeProvider>

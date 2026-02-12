@@ -9,7 +9,7 @@ export const metadataByLocale = {
         description: "Découvrez mes projets et compétences en développement web full-stack.",
         images: [
           {
-            url: "/opengraph-image-v2.png", // Chemin relatif (Next.js 16 gère ça automatiquement)
+            url: "/opengraph-image.png", // Chemin relatif (Next.js 16 gère ça automatiquement)
             width: 1200,
             height: 630,
             alt: "Portfolio de Vincent André",
@@ -20,7 +20,7 @@ export const metadataByLocale = {
         card: "summary_large_image",
         title: "Vincent André - Portfolio",
         description: "Développeur Full-Stack | Node.js, React",
-        images: ["/opengraph-image-v2.png"],
+        images: ["/opengraph-image.png"],
       },
     },
     projects: {
@@ -31,7 +31,7 @@ export const metadataByLocale = {
         description: "Explorez mes projets récents en développement full-stack.",
         images: [
           {
-            url: "/opengraph-image-v2.png",
+            url: "/opengraph-image.png",
             width: 1200,
             height: 630,
             alt: "Projets de Vincent André",
@@ -42,7 +42,7 @@ export const metadataByLocale = {
         card: "summary_large_image",
         title: "Vincent André - Projets",
         description: "Découvrez mes projets full-stack.",
-        images: ["/opengraph-image-v2.png"],
+        images: ["/opengraph-image.png"],
       },
     },
   },
@@ -55,7 +55,7 @@ export const metadataByLocale = {
         description: "Discover my projects and full-stack development skills.",
         images: [
           {
-            url: "/opengraph-image-v2.png",
+            url: "/opengraph-image.png",
             width: 1200,
             height: 630,
             alt: "Vincent André's Portfolio",
@@ -66,7 +66,7 @@ export const metadataByLocale = {
         card: "summary_large_image",
         title: "Vincent André - Portfolio",
         description: "Full-Stack Developer | Node.js, React",
-        images: ["/opengraph-image-v2.png"],
+        images: ["/opengraph-image.png"],
       },
     },
     projects: {
@@ -77,7 +77,7 @@ export const metadataByLocale = {
         description: "Browse my recent full-stack development projects.",
         images: [
           {
-            url: "/opengraph-image-v2.png",
+            url: "/opengraph-image.png",
             width: 1200,
             height: 630,
             alt: "Vincent André's Projects",
@@ -88,7 +88,7 @@ export const metadataByLocale = {
         card: "summary_large_image",
         title: "Vincent André - Projects",
         description: "Explore my full-stack projects.",
-        images: ["/opengraph-image-v2.png"],
+        images: ["/opengraph-image.png"],
       },
     },
   },
