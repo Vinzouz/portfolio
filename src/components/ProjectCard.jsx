@@ -79,6 +79,7 @@ export function ProjectCard({ project, index }) {
                       alt={`${project.title} - Screenshot ${index + 1}`}
                       fill
                       className="object-contain"
+                      title={`${project.title} - Screenshot ${index + 1}`}
                     />
                   </div>
                 </SwiperSlide>
@@ -88,9 +89,9 @@ export function ProjectCard({ project, index }) {
 
           <div className="space-y-4">
             <CardItem translateZ={60}>
-              <h3 className="text-2xl font-bold text-foreground ">
+              <h2 className="text-2xl font-bold text-foreground">
                 {project.title}
-              </h3>
+              </h2>
             </CardItem>
 
             <CardItem translateZ={50}>

@@ -25,6 +25,10 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale} className='scroll-smooth overflow-x-hidden'>
       <head>
+        <meta name="keywords" content="développeur full-stack, portfolio Vincent André, Node.js, React, développement web, JavaScript, frontend, backend" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Vincent André" />
+        <meta name="publisher" content="Vincent André" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
@@ -36,17 +40,19 @@ export default async function LocaleLayout({ children, params }) {
         {/* JSON-LD Person / Website structured data (minimal) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Vincent André",
-            "url": siteUrl,
-            "jobTitle": "Full-Stack Developer",
-            "description": homeMeta?.description || "Full-Stack developer",
-            "sameAs": [
-              "https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/"
-            ]
-          }) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Vincent André",
+              "url": siteUrl,
+              "jobTitle": "Full-Stack Developer",
+              "description": homeMeta?.description || "Full-Stack developer",
+              "sameAs": [
+                "https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/"
+              ]
+            })
+          }}
         />
       </head>
       <body className={`${montserrat.variable}`}>

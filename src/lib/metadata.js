@@ -3,7 +3,7 @@ export const metadataByLocale = {
   fr: {
     home: {
       title: "Vincent André - Portfolio",
-      description: "Portfolio de Vincent André, développeur full-stack",
+      description: "Portfolio de Vincent André, développeur full-stack spécialisé en Node.js et React. Découvrez mes projets, compétences et expériences en développement web moderne.",
       openGraph: {
         title: "Vincent André - Portfolio",
         description: "Découvrez mes projets et compétences en développement web full-stack.",
@@ -25,7 +25,7 @@ export const metadataByLocale = {
     },
     projects: {
       title: "Vincent André - Projets",
-      description: "Mes projets récents",
+      description: "Explorez mes projets full-stack : applications web, APIs et solutions techniques combinant backend et frontend pour des expériences utilisateur fluides.",
       openGraph: {
         title: "Vincent André - Projets",
         description: "Explorez mes projets récents en développement full-stack.",
@@ -49,7 +49,7 @@ export const metadataByLocale = {
   en: {
     home: {
       title: "Vincent André - Portfolio",
-      description: "Vincent André's portfolio",
+      description: "Portfolio of Vincent André, full-stack developer specializing in Node.js and React. Discover my projects, skills, and experience in modern web development.",
       openGraph: {
         title: "Vincent André - Portfolio",
         description: "Discover my projects and full-stack development skills.",
@@ -71,7 +71,7 @@ export const metadataByLocale = {
     },
     projects: {
       title: "Vincent André - Projects",
-      description: "My recent projects",
+      description: "Explore my full-stack projects: web applications, APIs, and technical solutions combining backend and frontend for seamless user experiences.",
       openGraph: {
         title: "Vincent André - Projects",
         description: "Browse my recent full-stack development projects.",

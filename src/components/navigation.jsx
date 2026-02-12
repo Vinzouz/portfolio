@@ -34,6 +34,7 @@ export function Navigation() {
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                        aria-label="Burger menu"
                     >
                         <svg
                             className="h-6 w-6"
