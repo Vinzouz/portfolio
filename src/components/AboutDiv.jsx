@@ -41,7 +41,10 @@ export default async function AboutDiv() {
                         {/* Compétences à droite */}
                         <div className="md:w-[45%] space-y-4 mt-10 md:mt-0">
 
-                            <h3 className="text-2xl font-semibold flex"><CodeXml className="text-indigo-600" size={35} />&nbsp; {tAbout('skills')}</h3>
+                            <h3 className="text-2xl font-semibold flex">
+                                <CodeXml className="text-indigo-600" size={35} />
+                                &nbsp; {tAbout('skills')}
+                            </h3>
 
                             <div className="flex flex-wrap gap-2">
                                 {['Node.js', 'Express', 'REST APIs', 'MySQL', 'MongoDB', 'NoSQL'].map((skill, index) => (
