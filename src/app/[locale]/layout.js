@@ -27,7 +27,7 @@ export default async function LocaleLayout({ children, params }) {
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.webmanifest" />
         {/* Canonical and hreflang for SEO */}
         <link rel="canonical" href={localeBase} />
         <link rel="alternate" hrefLang="fr" href={`${siteUrl}/fr/`} />

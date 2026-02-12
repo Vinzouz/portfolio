@@ -92,7 +92,7 @@ export function ContactForm() {
                 }}
                 className="fixed left-3 bottom-[5%] md:bottom-1/2 md:transform md:-translate-y-1/2"
             >
-                <Link target="_blank" href="https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/">
+                <Link target="_blank" href="https://www.linkedin.com/in/vincent-andr%C3%A9-7021b7244/" aria-label="LinkedIn | Vincent André">
                     <div className="size-14 glass-cardHome rounded-full mb-2 flex justify-center items-center hover:scale-110 transition-transform duration-300 hover:fill-current hover:text-violet-800">
                         <Linkedin />
                     </div>

@@ -20,7 +20,7 @@ export default async function AboutDiv() {
                 {tAbout("title")}
             </h2>
             <section className="glass-cardHome max-w-5xl flex justify-center m-auto mb-24">
-                <div className="px-8 py-10 space-y-6">
+                <div className="px-8 pt-10 pb-4 space-y-6">
                     <div className="md:flex md:space-x-8">
                         {/* Texte à gauche */}
                         <div className="md:w-[55%] content-center space-y-4">
@@ -109,10 +109,11 @@ export default async function AboutDiv() {
                     <div className="flex justify-center">
                         <Link href="/projects">
                             <Button
-                                className="w-[250px] bg-gradient-to-r from-indigo-500 to-violet-500 hover:brightness-125 transition-all text-white py-2 px-4 rounded-lg transition-colors mt-4 border-none font-semibold"
+                                className="w-[280px] min-h-[48px] bg-gradient-to-r from-indigo-500 to-violet-500 hover:brightness-125 transition-all text-white py-3 px-6 rounded-xl my-6 border-none font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 {tAbout('seeProjects')}
                             </Button>
+
                         </Link>
                     </div>
                 </div>

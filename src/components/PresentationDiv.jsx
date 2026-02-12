@@ -6,7 +6,7 @@ export default async function PresentationDiv() {
     const t = await useTranslations("pages.home")
 
     return (
-        <section className="flex items-center justify-center mt-40">
+        <section className="flex items-center justify-center mt-20 md:mt-40">
             <motion.div
                 className="glass-cardHome max-w-3xl text-center px-8 py-10"
                 initial={{ x: -100, opacity: 0 }} // Position initiale : 100px à gauche et invisible
@@ -14,13 +14,13 @@ export default async function PresentationDiv() {
                 transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }} // Effet "spring" pour un mouvement naturel
             >
                 <div className="mb-4 flex flex-col items-center">
-                    <h1 className="text-xl mb-1">
+                    <div className="text-xl mb-1">
                         {t("title")}
-                    </h1>
+                    </div>
                     <div className="flex items-center">
-                        <div className="text-4xl font-semibold">
+                        <h1 className="text-4xl font-semibold">
                             {t("title2")}
-                        </div>
+                        </h1>
                         <div className="text-xl ml-2">
                             👋
                         </div>
