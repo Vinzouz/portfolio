@@ -4,13 +4,12 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
+  reactStrictMode: true,
+  // Désactive les source maps en développement (optionnel)
+  productionBrowserSourceMaps: false,
+  // Ignore les warnings de source map
+  onDemandEntries: {
+    maxInactiveAge: 1000 * 60 * 60, // 1 heure
   },
 };
 
