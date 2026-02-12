@@ -54,6 +54,7 @@ export function ProjectModal({ isOpen, onClose, project }) {
                     alt={`${project.title} - Screenshot ${index + 1}`}
                     fill
                     className="object-contain"
+                    title={`${project.title} - Screenshot ${index + 1}`}
                   />
                 </div>
               </SwiperSlide>
