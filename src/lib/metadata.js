@@ -24,7 +24,7 @@ export const metadataByLocale = {
         description: "Découvrez mes projets et compétences en développement web full-stack.",
         images: [
             {
-                url: "/og-image.png", // Place ton image dans public/
+                url: "/opengraph-image.png", // Place ton image dans public/
                 width: 1200,
                 height: 630,
                 alt: "Portfolio de Vincent André",
@@ -36,6 +36,6 @@ export const metadataByLocale = {
         card: "summary_large_image",
         title: "Vincent André - Portfolio",
         description: "Développeur Full-Stack | Node.js, React, Bases de données",
-        images: ["/og-image.png"],
+        images: ["/opengraph-image.png"],
     },
 };
