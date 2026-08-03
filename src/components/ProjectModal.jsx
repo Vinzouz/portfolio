@@ -27,7 +27,7 @@ export function ProjectModal({ isOpen, onClose, project }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={onClose}>
-      <div className="glass-cardProjectModal w-[95vw] md:w-[60vw] h-[90vh] md:h-auto overflow-hidden flex flex-col relative mx-4 rounded-lg pt-4" onClick={(e) => e.stopPropagation()}>
+      <div className="glass-cardProjectModal w-[95vw] md:w-[50vw] h-[90vh] md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col relative mx-4 rounded-lg pt-4" onClick={(e) => e.stopPropagation()}>
         <button onClick={onClose} className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-background/80 hover:bg-background flex items-center justify-center text-foreground">
           ✕
         </button>
